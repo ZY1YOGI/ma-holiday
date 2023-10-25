@@ -27,6 +27,11 @@ class StatsOverviewWidget extends BaseWidget
                 ->descriptionIcon('heroicon-m-arrow-trending-up')
                 ->chart([15, 4, 10, 2, 12, 4, 12])
                 ->color('success'),
+            Stat::make('New Users', '15')
+                ->description('12% increase')
+                ->descriptionIcon('heroicon-m-arrow-trending-up')
+                ->chart([15, 4, 10, 2, 12, 4, 12])
+                ->color('success'),
         ];
     }
 }
