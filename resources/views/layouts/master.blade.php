@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ $title }}</title>
 
-    <link rel="stylesheet" href="{{ assets('') }}" />
+    {{-- <link rel="stylesheet" href="{{ assets('') }}" /> --}}
 
     <script src="//unpkg.com/alpinejs" defer></script>
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
