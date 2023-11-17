@@ -1,4 +1,4 @@
-<x-layout title="Home">
+<x-layout title="Home" description="Home description" keywords="Home keywords">
     @include('partials.header')
 
 
@@ -9,18 +9,18 @@
 
 
 
-    <div x-data="{ open: false }">
+    <div x-data="{ slide: false }">
 
 
     </div>
 
 
     <script>
-        Alpine.data('dropdown', () => ({
-            open: false,
+        Alpine.data('slide', () => ({
+            id: 0,
 
-            toggle() {
-                this.open = !this.open
+            next(id) {
+                this.id = id
             }
         }))
     </script>
