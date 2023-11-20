@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ session()->get('theme') }} dark" data-theme="{{ session()->get('theme') }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ session()->get('theme') }}" data-theme="{{ session()->get('theme') }}">
 <head>
     {{-- Charset --}}
     <meta charset="UTF-8" />
@@ -19,8 +19,8 @@
     {{-- Icon --}}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
     {{-- Fonts Google --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap" />
     {{-- Robots --}}
     <meta name="robots" content="index, follow" />
     {{-- Manifest --}}
@@ -30,9 +30,8 @@
     {{-- Theme --}}
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1422" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#E4E9F7" />
-    {{-- Color Scheme --}}
-    {{-- <meta name="color-scheme" content="light dark" /> --}}
-
+    {{-- Alpinejs --}}
+    <script src="//unpkg.com/alpinejs" defer></script>
     {{-- Scripts And Styls --}}
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
 </head>
