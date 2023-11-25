@@ -8,7 +8,7 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     {{-- Author --}}
-    <meta name="author" content="{{ env('AUTHOR_NAME') }}" />
+    <meta name="author" content="Youssef Amjad" />
     <link rel="author" href="https://www.facebook.com/ZY1YOGi" />
     {{-- Description --}}
     <meta name="description" content="{{ $description }}" />

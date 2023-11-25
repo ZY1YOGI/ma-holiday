@@ -18,7 +18,7 @@ class CategoryResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
@@ -40,33 +40,14 @@ class CategoryResource extends Resource
                                     ->required()
                                     ->unique(ignoreRecord: true)
                             ]),
-                        Forms\Components\Select::make('parent_id')
-                            ->label('Parent')
-                            ->relationship('parent', 'name', fn (Builder $query) => $query->where('parent_id', null))
-                            ->placeholder('Select parent category'),
 
-                        Forms\Components\MarkdownEditor::make('description')
+                        Forms\Components\Textarea::make('description')
                     ]),
-
-                Forms\Components\Section::make('image')
-                    ->schema([
-                        Forms\Components\FileUpload::make('image')
-                            ->label('Image')
-                            ->imageEditor()
-                            ->image()
-                    ])->collapsible(),
-
                 Forms\Components\Section::make('SEO')
                     ->schema([
-                        Forms\Components\TextInput::make('seo_title')
-                            ->required(),
                         Forms\Components\TagsInput::make('seo_keywords'),
-                        Forms\Components\Textarea::make('seo_description')
-                            ->columnSpanFull()
-                            ->maxLength(160),
                     ])
                     ->description('SEO: search engine optimize')
-                    ->columns(2)
             ]);
     }
 
@@ -74,7 +55,15 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Name Category')
+                    ->searchable()
+                    ->sortable(),
+
+                Tables\Columns\TextColumn::make('description')
+                    ->label('Description Category')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //
@@ -82,11 +71,7 @@ class CategoryResource extends Resource
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+            ->bulkActions([]);
     }
 
     public static function getRelations(): array
@@ -99,9 +84,7 @@ class CategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCategories::route('/'),
-            'create' => Pages\CreateCategory::route('/create'),
-            'edit' => Pages\EditCategory::route('/{record}/edit'),
+            'index' => Pages\ManageCategories::route('/'),
         ];
     }
 }

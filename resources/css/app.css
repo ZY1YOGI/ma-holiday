@@ -8,23 +8,3 @@
     @apply border-2 border-black;
   }
 }
-
-.header {
-  @apply bg-white shadow-md;
-}
-
-.header-container {
-  @apply container flex justify-between py-2 items-center px-2.5;
-}
-
-.navigation {
-  @apply flex items-center justify-between space-x-2.5 text-sm font-medium lg:text-[15px] max-md:hidden;
-}
-
-.nav-link {
-  @apply px-5 py-2.5 hover:bg-neutral-200 rounded-full
-}
-
-.nav-link.active {
-  @apply bg-neutral-200
-}

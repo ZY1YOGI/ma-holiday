@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parent_id')->nullable()->constrained('categories')->cascadeOnDelete();
-            $table->string('name', 60);
+            $table->string('name');
             $table->string('slug')->unique();
             $table->string('description');
-            # SEO Fields
-            $table->string('seo_title', 60);
-            $table->string('seo_description', 160);
             $table->string('seo_keywords');
             $table->timestamps();
         });
