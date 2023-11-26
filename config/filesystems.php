@@ -45,7 +45,7 @@ return [
         ],
         'gallery_images' => [
             'driver' => 'local',
-            'root' => public_path(''),
+            'root' => public_path('gallery-images'),
             'url' => env('APP_URL'). '/gallery-images',
             'visibility' => 'public',
             'throw' => false,
