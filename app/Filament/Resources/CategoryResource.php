@@ -45,7 +45,8 @@ class CategoryResource extends Resource
                     ]),
                 Forms\Components\Section::make('SEO')
                     ->schema([
-                        Forms\Components\TagsInput::make('seo_keywords'),
+                        Forms\Components\TagsInput::make('seo_keywords')
+                            ->separator(','),
                     ])
                     ->description('SEO: search engine optimize')
             ]);
@@ -56,20 +57,22 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Name Category')
+                    ->label('Name')
                     ->searchable()
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('description')
-                    ->label('Description Category')
+                    ->label('Description')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->words(8),
             ])
             ->filters([
                 //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([]);
     }

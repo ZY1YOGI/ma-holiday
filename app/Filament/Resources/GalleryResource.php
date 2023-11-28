@@ -46,10 +46,11 @@ class GalleryResource extends Resource
                 Forms\Components\Section::make('Images')
                     ->schema([
                         SpatieMediaLibraryFileUpload::make('media')
-                            ->collection('gallery-images')
-                            ->disk('gallery_images')
+                            ->collection('gallery')
+                            ->disk('images')
+                            ->minFiles(1)
+                            ->maxFiles(120)
                             ->multiple()
-                            ->maxFiles(5)
                             ->panelLayout('grid')
                             ->hiddenLabel(),
                     ])
@@ -72,7 +73,7 @@ class GalleryResource extends Resource
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('gallery-image')
                     ->label('Image')
-                    ->collection('gallery-images'),
+                    ->collection('gallery'),
                 Tables\Columns\TextColumn::make('name')
                     ->label('Name')
                     ->searchable()
