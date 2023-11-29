@@ -52,6 +52,7 @@ class GalleryResource extends Resource
                             ->maxFiles(120)
                             ->multiple()
                             ->panelLayout('grid')
+                            ->image()
                             ->hiddenLabel(),
                     ])
                     ->collapsible(),
