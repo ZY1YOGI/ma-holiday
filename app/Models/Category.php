@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -21,7 +22,8 @@ class Category extends Model
         'seo_keywords'
     ];
 
-    protected $casts = [
-        'tags' => 'array',
-    ];
+    public function trips(): HasMany
+    {
+        return $this->hasMany(Trip::class, 'category_id');
+    }
 }
