@@ -22,10 +22,6 @@ class GeneralSetting extends SettingsPage
             ->schema([
                 Forms\Components\Section::make()
                     ->schema([
-                        Forms\Components\TextInput::make('app_name')
-                            ->label('App Name')
-                            ->required(),
-
                         Forms\Components\Select::make('default_theme')
                             ->label('Default Theme')
                             ->options([
