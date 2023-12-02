@@ -22,13 +22,15 @@ class SocialMediaSetting extends SettingsPage
                     ->schema([
                         Forms\Components\TextInput::make('facebook_name')
                             ->label('Facebook Name Page')
-                            ->prefixIcon('bi-facebook'),
+                            ->prefixIcon('bi-facebook')
+                            ->required(),
 
                         Forms\Components\TextInput::make('facebook_url')
                             ->label('Facebook URL Page')
                             ->prefix('https://')
                             ->suffixIcon('heroicon-m-globe-alt')
-                            ->url(),
+                            ->url()
+                            ->required(),
 
                     ])->columns(2),
 
@@ -36,13 +38,15 @@ class SocialMediaSetting extends SettingsPage
                     ->schema([
                         Forms\Components\TextInput::make('instagram_name')
                             ->label('Instagram Name Page')
-                            ->prefixIcon('bi-instagram'),
+                            ->prefixIcon('bi-instagram')
+                            ->required(),
 
                         Forms\Components\TextInput::make('instagram_url')
                             ->label('Instagram URL Page')
                             ->prefix('https://')
                             ->suffixIcon('heroicon-m-globe-alt')
-                            ->url(),
+                            ->url()
+                            ->required(),
 
                     ])->columns(2),
 
@@ -50,13 +54,15 @@ class SocialMediaSetting extends SettingsPage
                     ->schema([
                         Forms\Components\TextInput::make('tiktok_name')
                             ->label('Tiktok Name Page')
-                            ->prefixIcon('bi-tiktok'),
+                            ->prefixIcon('bi-tiktok')
+                            ->required(),
 
                         Forms\Components\TextInput::make('tiktok_url')
                             ->label('Tiktok URL Page')
                             ->prefix('https://')
                             ->suffixIcon('heroicon-m-globe-alt')
-                            ->url(),
+                            ->url()
+                            ->required(),
 
                     ])->columns(2),
 
@@ -64,13 +70,15 @@ class SocialMediaSetting extends SettingsPage
                     ->schema([
                         Forms\Components\TextInput::make('twitter_name')
                             ->label('Twitter Name Page')
-                            ->prefixIcon('bi-twitter'),
+                            ->prefixIcon('bi-twitter')
+                            ->required(),
 
                         Forms\Components\TextInput::make('twitter_url')
                             ->label('Twitter URL Page')
                             ->prefix('https://')
                             ->suffixIcon('heroicon-m-globe-alt')
-                            ->url(),
+                            ->url()
+                            ->required(),
 
                     ])->columns(2),
 
@@ -78,12 +86,14 @@ class SocialMediaSetting extends SettingsPage
                     ->schema([
                         Forms\Components\TextInput::make('gmail_name')
                             ->label('E-mail Name')
-                            ->prefixIcon('heroicon-o-envelope'),
+                            ->prefixIcon('heroicon-o-envelope')
+                            ->required(),
 
                         Forms\Components\TextInput::make('gmail_url')
                             ->label('E-mail URL')
                             ->prefix('E-mai')
-                            ->email(),
+                            ->email()
+                            ->required(),
 
                     ])->columns(2),
 
@@ -93,12 +103,15 @@ class SocialMediaSetting extends SettingsPage
                             ->label('WhatsApp Phone 1')
                             ->prefixIcon('bi-whatsapp')
                             ->tel()
-                            ->telRegex('/\+?([0-9]{2})-?([0-9]{3})-?([0-9]{6,7})/'),
+                            ->telRegex('/\+?([0-9]{2})-?([0-9]{3})-?([0-9]{6,7})/')
+                            ->required(),
 
                         Forms\Components\TextInput::make('whatsapp_phone_2')
                             ->label('WhatsApp Phone 2')
                             ->prefixIcon('bi-whatsapp')
-                            ->tel(),
+                            ->tel()
+                            ->telRegex('/\+?([0-9]{2})-?([0-9]{3})-?([0-9]{6,7})/')
+                            ->required(),
 
                     ])->columns(2)
             ]);
