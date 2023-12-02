@@ -41,10 +41,17 @@ class CategoryResource extends Resource
                                     ->unique(ignoreRecord: true)
                             ]),
 
-                        Forms\Components\Textarea::make('description')
+                        Forms\Components\MarkdownEditor::make('description')
+                            ->disableToolbarButtons([
+                                'attachFiles'
+                            ])
+                            ->required()
                     ]),
                 Forms\Components\Section::make('SEO')
                     ->schema([
+                        Forms\Components\Textarea::make('seo_description')
+                            ->maxLength(160),
+
                         Forms\Components\TagsInput::make('seo_keywords')
                             ->separator(','),
                     ])
@@ -71,17 +78,11 @@ class CategoryResource extends Resource
                 //
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([]);
-    }
-
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
     }
 
     public static function getPages(): array
