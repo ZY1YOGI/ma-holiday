@@ -35,24 +35,7 @@ class UserResource extends Resource
                             ->required()
                             ->email()
                             ->unique(User::class, ignoreRecord: true),
-
-                        Forms\Components\TextInput::make('password')
-                            ->password()
-                            ->required()
-                            ->maxLength(255),
-
-                        Forms\Components\TagsInput::make('tags')->separator(',')
-                            ->required()
                     ])->columns(2),
-
-                Forms\Components\Section::make('Image')
-                    ->schema([
-                        Forms\Components\FileUpload::make('image')
-                            ->label('Image')
-                            ->imageEditor()
-                            ->image()
-                    ])
-                    ->collapsible(),
 
 
             ]);
