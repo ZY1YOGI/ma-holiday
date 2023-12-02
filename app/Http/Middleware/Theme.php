@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Settings\GeneralSettings;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +16,7 @@ class Theme
      */
     public function handle(Request $request, Closure $next): Response
     {
-        session()->has('theme') || session()->put('theme', env('DEFAULT_THEME', 'light'));
+        session()->has('theme') || session()->put('theme', (new GeneralSettings)->default_theme);
 
         return $next($request);
     }
