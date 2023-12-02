@@ -32,11 +32,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        \App\Models\Category::create([
-            'name' => 'Mountains',
-            'slug' => 'mountains',
-            'description' => fake()->text(35),
-            'seo_keywords' => "tag1,tag2,tag3,tags",
-        ]);
+        // \App\Models\Category::create([
+        //     'name' => 'Mountains',
+        //     'slug' => 'mountains',
+        //     'description' => fake()->text(35),
+        //     'seo_keywords' => "tag1,tag2,tag3,tags",
+        // ]);
     }
 }
