@@ -21,11 +21,13 @@ Route::get('/', function () {
 
 
 
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
+    Route::post('/login', [App\Http\Controllers\AuthController::class, 'loginUser'])->name('login');
+    Route::get('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register');
+    Route::post('/register', [App\Http\Controllers\AuthController::class, 'registerUser'])->name('register');
+});
 
-Route::get('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
-Route::post('/login', [App\Http\Controllers\AuthController::class, 'loginUser'])->name('login');
-
-Route::get('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register');
-Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
-
-
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
+});

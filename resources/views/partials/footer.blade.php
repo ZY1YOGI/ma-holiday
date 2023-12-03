@@ -4,7 +4,7 @@
             <div class="w-full px-8 sm:w-2/3 lg:w-3/12">
                 <div class="w-full mb-10">
                     <a href="/" class="flex items-center mb-3 space-x-3" title='Marsa Alam Holiday'>
-                        <h1 class="relative text-2xl md:text-3xl font-bold dark:text-white whitespace-nowrap">MA-HOLIDAY <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute w-12 -right-6 -top-2">
+                        <h1 class="relative text-2xl md:text-3xl font-bold dark:text-white whitespace-nowrap uppercase">{{ config('app.name') }} <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute w-12 -right-6 -top-2">
                                 <path d="M55.6314 14.8267L53.9335 14.1257C42.962 9.5956 30.7319 16.95 29.5892 28.7648L26.1439 19.705C24.5236 15.4442 27.6062 10.8624 32.1634 10.7577L37.6586 10.6315L22.2533 10.9722L19.6858 3.82297L19.4929 5.7026C19.1857 8.69612 16.6641 10.9722 13.6549 10.9722L0.97935 10.9722C11.9699 -1.56775 30.7393 -3.58629 44.1449 6.33002L55.6314 14.8267Z" fill="#2079FF" />
                             </svg>
                         </h1>
@@ -16,17 +16,17 @@
                     </p>
                     <div class="w-full mb-6">
                         <div class="flex items-center">
-                            <a title='facebook' href="https://www.facebook.com/profile.php?id=100064009540678" target="_blank" class="flex items-center justify-center w-8 h-8 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
-                                {{-- <FaFacebook /> --}}
+                            <a title='facebook' href="" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
+                                <x-bi-facebook class="w-full h-full"/>
                             </a>
-                            <a title='twitter' href="/" target="_blank" class="flex items-center justify-center w-8 h-8 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
-                                {{-- <FaTwitter /> --}}
+                            <a title='instagram' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
+                                <x-bi-instagram class="w-full h-full"/>
                             </a>
-                            <a title='youtube' href="/" target="_blank" class="flex items-center justify-center w-8 h-8 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
-                                {{-- <FaYoutube /> --}}
+                            <a title='tiktok' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
+                                <x-bi-tiktok class="w-full h-full"/>
                             </a>
-                            <a title='linkedin' href="/" target="_blank" class="flex items-center justify-center w-8 h-8 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
-                                {{-- <FaLinkedin /> --}}
+                            <a title='twitter' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
+                                <x-bi-twitter class="w-full h-full"/>
                             </a>
                         </div>
                     </div>
@@ -58,27 +58,20 @@
                 <div class="w-full mb-10">
                     <h2 class="mb-6 text-3xl font-bold">About</h2>
                     <ul>
-                        <li>
-                            <a href="/about-us" class="footer-link" title='Marsa Alam Holiday - About Us'>About Us</a>
-                        </li>
-                        <li><a href="#" class="footer-link">Features</a></li>
-                        <li><a href="#" class="footer-link">News</a></li>
-                        <li><a href="#" class="footer-link">Menu</a></li>
+                        <li><a href="/about-us" class="footer-link" title='Marsa Alam Holiday - About Us'>About Us</a></li>
+                        <li><a href="#" class="footer-link">FAQ</a></li>
+                        <li><a href="#" class="footer-link">Contact Us</a></li>
+
                     </ul>
                 </div>
             </div>
             <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
                 <div class="w-full mb-10">
-                    <h2 class="mb-6 text-3xl font-bold">Company</h2>
+                    <h2 class="mb-6 text-3xl font-bold">Category</h2>
                     <ul>
-                        <li>
-                            <a href="/about-us" class="footer-link" title='Marsa Alam Holiday - About Us'>About Us</a>
-                        </li>
-                        <li><a href="#" class="footer-link">Partner with us</a></li>
-                        <li>
-                            <a href="/faq" class="footer-link">FAQ</a>
-                        </li>
-                        <li><a href="#" class="footer-link">Blog</a></li>
+                        <li><a href="/about-us" class="footer-link" title='Marsa Alam Holiday - Trips'>Trips</a></li>
+                        <li><a href="/" class="footer-link">Category</a></li>
+                        <li><a href="/" class="footer-link">FAQ</a></li>
                     </ul>
                 </div>
             </div>
@@ -88,11 +81,7 @@
                     <ul>
                         <li><a href="#" class="footer-link">Account</a></li>
                         <li><a href="#" class="footer-link">Support Center</a></li>
-                        <li><a href="#" class="footer-link">Feedback</a></li>
-                        <li>
-                            <a href="/contact-us" class="footer-link" title='Marsa Alam Holiday - Contact Us'>Contact us</a>
-                        </li>
-                        <li><a href="#" class="footer-link">Accessibility</a></li>
+                        <li><a href="/contact-us" class="footer-link" title='Marsa Alam Holiday - Contact Us'>Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,10 +91,9 @@
                     Question or feedback? <br />
                     We'd love to hear from you
                 </p>
-                <div class="flex items-center px-5 py-1.5 bg-white rounded-full [box-shadow:_0px_8px_11px_#00000040]">
-                    <input type="email" name="contact" class="w-full bg-transparent border-none outline-none" placeholder="Email Address" />
-                    {{-- <AiOutlineSend size={40} class="p-1 text-white rounded-full cursor-pointer bg-primary" /> --}}
-                </div>
+                <form action="">
+                    <input type="email" name="contact" class="w-full outline-none border-none rounded-full py-3 px-5 shadow" placeholder="Email Address" />
+                </form>
                 <p class="mt-5 text-base">&copy; 2023 All rights reserved For MA-HOLIDAY</p>
             </div>
         </div>
