@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->longText('description');
-            $table->string('seo_description');
-            $table->string('seo_keywords');
+            $table->string('seo_description')->nullable();
+            $table->string('seo_keywords')->nullable();
             $table->timestamps();
         });
     }

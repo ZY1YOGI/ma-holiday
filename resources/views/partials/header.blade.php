@@ -11,10 +11,10 @@
                     <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 nav-link-active" href="{{ route('home') }}">Home</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Trips</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Categories</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Categories</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Trips</a>
                 </li>
                 <li>
                     <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('about-us') }}">About-us</a>
@@ -30,14 +30,14 @@
                     <div class="relative" x-init x-data="{ open: false }">
                         <button @click="open = !open" class="inline-flex items-center" type="button">
                             <div class="relative items-center justify-center overflow-hidden text-neutral-100 uppercase font-semibold shadow-inner rounded-full w-12 h-12 ring-1 ring-white dark:ring-neutral-900">
-                                <x-image src="https://ui-avatars.com/api/?name={{auth()->user()->name}}&color=FFFFFF&background=09090b" :alt="auth()->user()->name" class="absolute w-full h-full object-cover" />
+                                <x-image src="https://ui-avatars.com/api/?name={{ auth()->user()->name }}&color=FFFFFF&background=09090b" :alt="auth()->user()->name" class="absolute w-full h-full object-cover" />
                             </div>
                         </button>
                         <div x-show="open" class="absolute z-10 w-[230px] mt-3 right-0 sm:px-0 shadow-lg" style="display: none;" x-transition>
                             <div class="relative grid grid-cols-1 gap-6 bg-white dark:bg-body-dark py-7 px-6 rounded-3xl">
                                 <div class="flex items-center space-x-3">
                                     <div class="wil-avatar relative inline-flex items-center justify-center overflow-hidden text-neutral-100 uppercase font-semibold shadow-inner rounded-full w-12 h-12 ring-1 ring-white dark:ring-neutral-900">
-                                        <x-image src="https://ui-avatars.com/api/?name={{auth()->user()->name}}&color=FFFFFF&background=09090b" :alt="auth()->user()->name" class="absolute w-full h-full object-cover" />
+                                        <x-image src="https://ui-avatars.com/api/?name={{ auth()->user()->name }}&color=FFFFFF&background=09090b" :alt="auth()->user()->name" class="absolute w-full h-full object-cover" />
                                     </div>
                                     <div class="flex-grow">
                                         <h4 class="font-xs font-semibold">{{ auth()->user()->name }}</h4>

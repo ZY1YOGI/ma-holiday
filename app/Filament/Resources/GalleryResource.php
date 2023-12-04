@@ -41,6 +41,7 @@ class GalleryResource extends Resource
                             ]),
 
                         Forms\Components\Textarea::make('description')
+                            ->required()
                     ]),
 
                 Forms\Components\Section::make('Images')
