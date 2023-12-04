@@ -8,19 +8,19 @@
             </a>
             <ul x-ref="nav" class="flex lg:flex-wrap items-center lg:space-x-1 max-lg:fixed max-lg:top-full max-lg:inset-0 max-lg:h-screen max-lg:flex-col max-lg:justify-center max-lg:space-y-3 max-lg:m-0 max-lg:bg-white transition-all duration-500 dark:bg-body-dark">
                 <li class="menu-item menu-dropdown relative">
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 nav-link-active" href="#">Home</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 nav-link-active" href="{{ route('home') }}">Home</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#articles">Trips</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Trips</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#sard">Categories</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Categories</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#infographic">About-us</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('about-us') }}">About-us</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="">contact-us</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('contact-us') }}">contact-us</a>
                 </li>
             </ul>
         </div>

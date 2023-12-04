@@ -22,11 +22,11 @@
                             <a title='instagram' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
                                 <x-bi-instagram class="w-full h-full"/>
                             </a>
-                            <a title='tiktok' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
-                                <x-bi-tiktok class="w-full h-full"/>
-                            </a>
                             <a title='twitter' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
                                 <x-bi-twitter class="w-full h-full"/>
+                            </a>
+                            <a title='tiktok' href="/" target="_blank" class="flex items-center justify-center p-1.5 w-10 h-10 mr-3 text-white rounded-full bg-primary hover:border-primary sm:mr-4 lg:mr-3 xl:mr-4">
+                                <x-bi-tiktok class="w-full h-full"/>
                             </a>
                         </div>
                     </div>
@@ -58,9 +58,9 @@
                 <div class="w-full mb-10">
                     <h2 class="mb-6 text-3xl font-bold">About</h2>
                     <ul>
-                        <li><a href="/about-us" class="footer-link" title='Marsa Alam Holiday - About Us'>About Us</a></li>
+                        <li><a href="{{ route('about-us') }}" class="footer-link" title='Marsa Alam Holiday - About Us'>About Us</a></li>
                         <li><a href="#" class="footer-link">FAQ</a></li>
-                        <li><a href="#" class="footer-link">Contact Us</a></li>
+                        <li><a href="{{ route('contact-us') }}" class="footer-link">Contact Us</a></li>
 
                     </ul>
                 </div>
@@ -69,7 +69,7 @@
                 <div class="w-full mb-10">
                     <h2 class="mb-6 text-3xl font-bold">Category</h2>
                     <ul>
-                        <li><a href="/about-us" class="footer-link" title='Marsa Alam Holiday - Trips'>Trips</a></li>
+                        <li><a href="/" class="footer-link" title='Marsa Alam Holiday - Trips'>Trips</a></li>
                         <li><a href="/" class="footer-link">Category</a></li>
                         <li><a href="/" class="footer-link">FAQ</a></li>
                     </ul>
@@ -81,7 +81,7 @@
                     <ul>
                         <li><a href="#" class="footer-link">Account</a></li>
                         <li><a href="#" class="footer-link">Support Center</a></li>
-                        <li><a href="/contact-us" class="footer-link" title='Marsa Alam Holiday - Contact Us'>Contact us</a></li>
+                        <li><a href="{{ route('contact-us') }}" class="footer-link" title='Marsa Alam Holiday - Contact Us'>Contact us</a></li>
                     </ul>
                 </div>
             </div>
