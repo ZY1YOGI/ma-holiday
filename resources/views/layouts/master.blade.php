@@ -31,7 +31,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1422" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#E4E9F7" />
     {{-- Alpinejs --}}
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
     {{-- Scripts And Styls --}}
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
 </head>
