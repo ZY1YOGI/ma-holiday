@@ -20,7 +20,7 @@
                     <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('about-us') }}">About-us</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('contact-us') }}">contact-us</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('contact-us') }}">Contact-us</a>
                 </li>
             </ul>
         </div>
