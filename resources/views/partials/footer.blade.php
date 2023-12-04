@@ -94,7 +94,7 @@
                 <form action="">
                     <input type="email" name="contact" class="w-full outline-none border-none rounded-full py-3 px-5 shadow" placeholder="Email Address" />
                 </form>
-                <p class="mt-5 text-base">&copy; 2023 All rights reserved For MA-HOLIDAY</p>
+                <p class="mt-5 text-base">&copy; 2023 All rights reserved For TechViolin</p>
             </div>
         </div>
     </div>
