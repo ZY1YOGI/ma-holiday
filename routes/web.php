@@ -18,6 +18,16 @@ Route::get('/', function () {
 })->name('home');
 
 
+Route::get('/about-us', function () {
+    return view('about-us');
+})->name('about-us');
+
+
+Route::get('/contact-us', function () {
+    return view('contact-us');
+})->name('contact-us');
+
+
 
 
 
@@ -26,6 +36,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [App\Http\Controllers\AuthController::class, 'loginUser'])->name('login');
     Route::get('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register');
     Route::post('/register', [App\Http\Controllers\AuthController::class, 'registerUser'])->name('register');
+    Route::get('/forgot-password', [App\Http\Controllers\AuthController::class, 'forgotPassword'])->name('forgot-password');
+    Route::get('/reset-password', [App\Http\Controllers\AuthController::class, 'resetPassword'])->name('reset-password');
 });
 
 Route::middleware('auth')->group(function () {

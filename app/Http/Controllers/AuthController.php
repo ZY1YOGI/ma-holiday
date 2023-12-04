@@ -54,4 +54,14 @@ class AuthController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function forgotPassword(Request $request): View
+    {
+        return view('auth.forgot-password');
+    }
+
+    public function resetPassword(Request $request): View
+    {
+        return view('auth.reset-password');
+    }
 }
