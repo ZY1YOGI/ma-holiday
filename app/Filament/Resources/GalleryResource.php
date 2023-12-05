@@ -54,6 +54,7 @@ class GalleryResource extends Resource
                             ->multiple()
                             ->panelLayout('grid')
                             ->image()
+                            ->reorderable()
                             ->hiddenLabel(),
                     ])
                     ->collapsible(),

@@ -67,6 +67,7 @@ class TripResource extends Resource
                             ->multiple()
                             ->panelLayout('grid')
                             ->image()
+                            ->reorderable()
                             ->hiddenLabel(),
                     ])
                     ->collapsible(),
