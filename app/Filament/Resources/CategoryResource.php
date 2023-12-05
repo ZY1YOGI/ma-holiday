@@ -77,12 +77,12 @@ class CategoryResource extends Resource
                     ->label('Image')
                     ->collection('category'),
 
-                Tables\Columns\TextColumn::make('Name')
+                Tables\Columns\TextColumn::make('name')
                     ->label('Name')
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('Description')
+                Tables\Columns\TextColumn::make('description')
                     ->label('Description')
                     ->searchable()
                     ->sortable()
