@@ -59,7 +59,7 @@ class TripResource extends Resource
 
                 Forms\Components\Section::make('Images')
                     ->schema([
-                        SpatieMediaLibraryFileUpload::make('media')
+                        SpatieMediaLibraryFileUpload::make('image')
                             ->collection('trip')
                             ->disk('images')
                             ->minFiles(1)
@@ -97,7 +97,7 @@ class TripResource extends Resource
                     ->sortable()
                     ->words(8),
 
-                Tables\Columns\SpatieMediaLibraryImageColumn::make('trip-image')
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('image')
                     ->label('Image')
                     ->collection('trip'),
             ])

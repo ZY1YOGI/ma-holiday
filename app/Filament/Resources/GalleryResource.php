@@ -46,7 +46,7 @@ class GalleryResource extends Resource
 
                 Forms\Components\Section::make('Images')
                     ->schema([
-                        SpatieMediaLibraryFileUpload::make('media')
+                        SpatieMediaLibraryFileUpload::make('image')
                             ->collection('gallery')
                             ->disk('images')
                             ->minFiles(1)
@@ -73,7 +73,7 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\SpatieMediaLibraryImageColumn::make('gallery-image')
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('image')
                     ->label('Image')
                     ->collection('gallery'),
                 Tables\Columns\TextColumn::make('name')

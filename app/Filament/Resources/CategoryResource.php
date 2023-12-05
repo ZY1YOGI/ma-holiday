@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\CategoryResource\Pages;
 use App\Models\Category;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -47,6 +48,15 @@ class CategoryResource extends Resource
                             ])
                             ->required()
                     ]),
+                Forms\Components\Section::make('Image')
+                    ->schema([
+                        SpatieMediaLibraryFileUpload::make('image')
+                            ->collection('category')
+                            ->disk('images')
+                            ->image()
+                            ->hiddenLabel(),
+                    ])
+                    ->collapsible(),
                 Forms\Components\Section::make('SEO')
                     ->schema([
                         Forms\Components\Textarea::make('seo_description')
@@ -63,12 +73,16 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('image')
+                    ->label('Image')
+                    ->collection('category'),
+
+                Tables\Columns\TextColumn::make('Name')
                     ->label('Name')
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('description')
+                Tables\Columns\TextColumn::make('Description')
                     ->label('Description')
                     ->searchable()
                     ->sortable()
