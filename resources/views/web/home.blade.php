@@ -1,6 +1,6 @@
 <x-layout title="Home" description="Home description" keywords="Home keywords">
-    @include('partials.header')
+    @include('web.partials.header')
 
 
-    @include('partials.footer')
+    @include('web.partials.footer')
 </x-layout>

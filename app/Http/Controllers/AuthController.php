@@ -17,12 +17,12 @@ class AuthController extends Controller
 
     public function login(): View
     {
-        return view('auth.login');
+        return view('web.auth.login');
     }
 
     public function register(Request $request): View
     {
-        return view('auth.register');
+        return view('web.auth.register');
     }
 
     public function loginUser(LoginRequest $request): RedirectResponse
@@ -57,11 +57,11 @@ class AuthController extends Controller
 
     public function forgotPassword(Request $request): View
     {
-        return view('auth.forgot-password');
+        return view('web.auth.forgot-password');
     }
 
     public function resetPassword(Request $request): View
     {
-        return view('auth.reset-password');
+        return view('web.auth.reset-password');
     }
 }

@@ -14,19 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('web.home');
 })->name('home');
 
 
 Route::get('/about-us', function () {
-    return view('about-us');
+    return view('web.about-us');
 })->name('about-us');
 
 
 Route::get('/contact-us', function () {
-    return view('contact-us');
+    return view('web.contact-us');
 })->name('contact-us');
 
+Route::get('/category{slug}', function (string $slug) {
+    return view('web.category');
+})->name('category');
 
 
 

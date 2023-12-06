@@ -1,5 +1,5 @@
 <x-layout title="Contact Us" description="contact-us description" keywords="contact-us keywords">
-    @include('partials.header')
+    @include('web.partials.header')
 
 
     <main class="relative">
@@ -40,5 +40,5 @@
 
 
 
-    @include('partials.footer')
+    @include('web.partials.footer')
 </x-layout>
