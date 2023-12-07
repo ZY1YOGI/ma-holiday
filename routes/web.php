@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,17 @@ Route::get('/contact-us', function () {
     return view('web.contact-us');
 })->name('contact-us');
 
-Route::get('/category{slug}', function (string $slug) {
-    return view('web.category');
-})->name('category');
+
+
+Route::get('/categories', function () {
+    $categories = Category::get();
+    return view('web.categories', compact('categories'));
+})->name('categories');
+
+
+Route::get('/categories/{slug}', function (Category $slug) {
+    return view('web.category', compact('slug'));
+})->name('categories');
 
 
 
