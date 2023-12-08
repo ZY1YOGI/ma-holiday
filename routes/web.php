@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,31 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('web.home');
-})->name('home');
-
-
-Route::get('/about-us', function () {
-    return view('web.about-us');
-})->name('about-us');
-
-
-Route::get('/contact-us', function () {
-    return view('web.contact-us');
-})->name('contact-us');
+Route::get('/', [App\Http\Controllers\WebController::class, 'home'])->name('home');
+Route::get('/about-us', [App\Http\Controllers\WebController::class, 'aboutUs'])->name('about-us');
+Route::get('/contact-us', [App\Http\Controllers\WebController::class, 'contactUs'])->name('contact-us');
 
 
 
-Route::get('/categories', function () {
-    $categories = Category::get();
-    return view('web.categories', compact('categories'));
-})->name('categories');
-
-
-Route::get('/categories/{slug}', function (Category $category) {
-    return view('web.category', compact('category'));
-})->name('category');
+Route::get('/categories', [App\Http\Controllers\WebController::class, 'categories'])->name('categories');
+Route::get('/categories/{category}', [App\Http\Controllers\WebController::class, 'category'])->name('category');
+Route::get('/trips', [App\Http\Controllers\WebController::class, 'trips'])->name('trips');
+Route::get('/trips/{trip}', [App\Http\Controllers\WebController::class, 'trip'])->name('trip');
 
 
 

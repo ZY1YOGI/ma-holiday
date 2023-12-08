@@ -27,9 +27,9 @@ class Category extends Model implements HasMedia
     ];
 
     public function getRouteKeyName()
-{
-    return 'slug';
-}
+    {
+        return 'slug';
+    }
 
     public function trips(): HasMany
     {

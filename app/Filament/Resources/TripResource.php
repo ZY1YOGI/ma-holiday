@@ -39,14 +39,14 @@ class TripResource extends Resource
                                     ->required()
                                     ->unique(ignoreRecord: true),
                             ]),
-                        Forms\Components\Textarea::make('description')
-                            ->required()
-                            ->rows(5)
-                            ->maxLength(160),
 
                         Forms\Components\Select::make('category_id')
                             ->relationship(name: 'category', titleAttribute: 'name')
                             ->required(),
+                        Forms\Components\Textarea::make('description')
+                            ->required()
+                            ->rows(5)
+                            ->maxLength(300),
                     ]),
 
                 Forms\Components\Section::make('Content')
