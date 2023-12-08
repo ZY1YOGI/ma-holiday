@@ -26,6 +26,11 @@ class Category extends Model implements HasMedia
         'seo_keywords'
     ];
 
+    public function getRouteKeyName()
+{
+    return 'slug';
+}
+
     public function trips(): HasMany
     {
         return $this->hasMany(Trip::class, 'category_id');

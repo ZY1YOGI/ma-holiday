@@ -1,5 +1,5 @@
 <x-layout title="Reset Password" description="Reset password description" keywords="Reset password keywords">
-    @include('partials.header')
+    @include('web.partials.header')
     <main class="bg-gray-50 dark:bg-gray-900 max-lg:py-32">
         <div class="flex flex-col items-center justify-center px-3 py-8 mx-auto md:h-screen lg:py-0">
             <a class="relative mb-6" title="Marsa Alam Holiday" href="{{ route('home') }}">
@@ -30,5 +30,5 @@
             </div>
         </div>
     </main>
-    @include('partials.footer')
+    @include('web.partials.footer')
 </x-layout>

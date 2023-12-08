@@ -36,9 +36,9 @@ Route::get('/categories', function () {
 })->name('categories');
 
 
-Route::get('/categories/{slug}', function (Category $slug) {
-    return view('web.category', compact('slug'));
-})->name('categories');
+Route::get('/categories/{slug}', function (Category $category) {
+    return view('web.category', compact('category'));
+})->name('category');
 
 
 

@@ -11,7 +11,7 @@
                     <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 nav-link-active" href="{{ route('home') }}">Home</a>
                 </li>
                 <li>
-                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Categories</a>
+                    <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="{{ route('categories') }}">Categories</a>
                 </li>
                 <li>
                     <a class="inline-flex items-center text-xl font-medium text-neutral-700 dark:text-neutral-100 py-2 px-4 xl:px-5 rounded-full hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200" href="#">Trips</a>

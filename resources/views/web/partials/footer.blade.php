@@ -70,7 +70,7 @@
                     <h2 class="mb-6 text-3xl font-bold">Category</h2>
                     <ul>
                         <li><a href="/" class="footer-link" title='Marsa Alam Holiday - Trips'>Trips</a></li>
-                        <li><a href="/" class="footer-link">Category</a></li>
+                        <li><a href="{{ route('categories') }}" class="footer-link">Categories</a></li>
                         <li><a href="/" class="footer-link">FAQ</a></li>
                     </ul>
                 </div>
