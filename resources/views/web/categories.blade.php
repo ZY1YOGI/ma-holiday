@@ -3,8 +3,13 @@
 
 
     <main class="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-12">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-
+        <div class="text-center mb-5 space-y-2.5">
+            <h1 class="text-4xl font-bold text-blue-950 tracking-wider pb-1.5 font-serif">CATEGORIES MaHoLIDAY</h1>
+            <p class="px-1.5 text-gray-700" data-aos="">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto consequatur a tenetur quis assumenda nihil ut quo!
+            </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 max-md:px-2.5">
             @foreach ($categories as $category)
                 <div class="relative flex flex-col group rounded-3xl overflow-hidden bg-white dark:bg-neutral-900 shadow">
                     <span class="absolute top-3 inset-x-3 z-10">
@@ -21,13 +26,13 @@
                     <a class="absolute inset-0" href="{{ route('category', $category->slug) }}"></a>
                     <div class="p-4 flex flex-col space-y-3">
                         <h1 class="text-2xl uppercase font-bold" title="category Trips | {{ $category->name }}">{{ $category->name }}</h1>
+                        <span></span>
                         <div class="pt-3 prose prose-slate dark:prose-dark text-xs">
                             {!! \Str::markdown($category->description) !!}
                         </div>
                     </div>
                 </div>
             @endforeach
-
         </div>
     </main>
 

@@ -19,7 +19,7 @@
     {{-- Icon --}}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
     {{-- Fonts Google --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap" />
     {{-- Robots --}}
     <meta name="robots" content="index, follow" />
@@ -30,6 +30,9 @@
     {{-- Theme --}}
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E1422" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#E4E9F7" />
+    {{-- Aosjs --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     {{-- Alpinejs --}}
     <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
     {{-- Scripts And Styls --}}
