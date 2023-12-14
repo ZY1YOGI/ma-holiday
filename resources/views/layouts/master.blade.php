@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{ session()->get('theme') }}" data-theme="{{ session()->get('theme') }}">
+
 <head>
     {{-- Charset --}}
     <meta charset="UTF-8" />
@@ -33,12 +34,17 @@
     {{-- Aosjs --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    {{-- Swiper --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {{-- Alpinejs --}}
     <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
     {{-- Scripts And Styls --}}
-    @vite(['resources/css/app.css', 'resources/ts/app.ts'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+
 <body class="antialiased text-black bg-body-light dark:bg-body-dark dark:text-white">
     {{ $slot }}
 </body>
+
 </html>
