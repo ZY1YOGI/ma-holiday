@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {{-- Alpinejs --}}
-    <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
+    <script src="{{ asset('js/alpinejs.min.js') }}" defer></script>
     {{-- Scripts And Styls --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
