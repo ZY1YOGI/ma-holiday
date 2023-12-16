@@ -20,7 +20,7 @@ const swiperTrips = new Swiper("#slide-trips", {
     crossFade: true,
   },
   autoplay: {
-    delay: 3500,
+    delay: 2500,
     disableOnInteraction: true,
   },
   navigation: {
