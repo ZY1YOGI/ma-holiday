@@ -21,8 +21,13 @@ Route::get('/contact-us', [App\Http\Controllers\WebController::class, 'contactUs
 
 Route::get('/categories', [App\Http\Controllers\WebController::class, 'categories'])->name('categories');
 Route::get('/categories/{category}', [App\Http\Controllers\WebController::class, 'category'])->name('category');
+
 Route::get('/trips', [App\Http\Controllers\WebController::class, 'trips'])->name('trips');
 Route::get('/trips/{trip}', [App\Http\Controllers\WebController::class, 'trip'])->name('trip');
+
+Route::get('/galleries', [App\Http\Controllers\WebController::class, 'galleries'])->name('galleries');
+Route::get('/galleries/{gallery}', [App\Http\Controllers\WebController::class, 'gallery'])->name('gallery');
+
 
 
 

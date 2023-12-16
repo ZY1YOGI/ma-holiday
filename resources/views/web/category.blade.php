@@ -37,20 +37,20 @@
                             <div class="w-full h-full grid grid-cols-3 gap-0.5">
                                 <div class="grid ">
                                     <div class="relative">
-                                        <x-image :src="$trip->getMedia('trip')[0]->original_url ?? 'https://montevista.greatheartsamerica.org/wp-content/uploads/sites/2/2016/11/default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
+                                        <x-image :src="$trip->getMedia('trip')[0]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
                                     </div>
                                 </div>
                                 <div class="grid grid-rows-2 gap-0.5">
                                     <div class="relative">
-                                        <x-image :src="$trip->getMedia('trip')[1]->original_url ?? 'https://montevista.greatheartsamerica.org/wp-content/uploads/sites/2/2016/11/default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
+                                        <x-image :src="$trip->getMedia('trip')[1]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
                                     </div>
                                     <div class="relative">
-                                        <x-image :src="$trip->getMedia('trip')[2]->original_url ?? 'https://montevista.greatheartsamerica.org/wp-content/uploads/sites/2/2016/11/default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
+                                        <x-image :src="$trip->getMedia('trip')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
                                     </div>
                                 </div>
                                 <div class="grid ">
                                     <div class="relative">
-                                        <x-image :src="$trip->getMedia('trip')[3]->original_url ?? 'https://montevista.greatheartsamerica.org/wp-content/uploads/sites/2/2016/11/default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
+                                        <x-image :src="$trip->getMedia('trip')[3]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full" :alt="$trip->title" />
                                     </div>
                                 </div>
                             </div>

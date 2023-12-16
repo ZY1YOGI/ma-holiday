@@ -10,7 +10,8 @@ class WebController extends Controller
 {
     public function home()
     {
-        return view('web.home');
+        $trips = Trip::get();
+        return view('web.home', compact('trips'));
     }
 
     public function aboutUs()
@@ -45,5 +46,10 @@ class WebController extends Controller
     public function trip(Trip $trip)
     {
         return view('web.trip', compact('trip'));
+    }
+
+    public function galleries()
+    {
+        return view('web.galleries');
     }
 }
