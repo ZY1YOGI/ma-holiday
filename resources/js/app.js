@@ -9,7 +9,7 @@ window.onload = () => {
   AOS.init();
 };
 
-const swiperTrips = new Swiper("#slide-trips", {
+const swiperHero = new Swiper("#slide-hero", {
   slidesPerView: 1,
   lazy: true,
   loop: true,
@@ -27,6 +27,37 @@ const swiperTrips = new Swiper("#slide-trips", {
     nextEl: ".slide-trip-next",
     prevEl: ".slide-trip-prev",
   },
+});
+
+const swiperTrips = new Swiper("#slide-trips", {
+  loop: true,
+  lazy: true,
+  speed: 300,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: true,
+  // },
+  // navigation: {
+  //   nextEl: ".slide-trip-next",
+  //   prevEl: ".slide-trip-prev",
+  // },
 });
 
 
@@ -77,4 +108,29 @@ const swiperCustomers = new Swiper("#slide-customers", {
     },
   },
 
+});
+
+
+
+const swiperGallery = new Swiper("#slide-gallery", {
+  loop: true,
+  lazy: true,
+  speed: 500,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  breakpoints: {
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 25,
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+  },
+  navigation: {
+    nextEl: "#slide-gallery-next",
+    prevEl: "#slide-gallery-prev",
+  },
 });

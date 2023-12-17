@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Trip;
@@ -10,8 +11,10 @@ class WebController extends Controller
 {
     public function home()
     {
-        $trips = Trip::get();
-        return view('web.home', compact('trips'));
+        $trips = Trip::latest()->get();
+        $galleries = Gallery::latest()->get();
+        $categories = Category::latest()->get();
+        return view('web.home', compact('trips', 'galleries', 'categories'));
     }
 
     public function aboutUs()
@@ -26,7 +29,7 @@ class WebController extends Controller
 
     public function categories()
     {
-        $categories = Category::get();
+        $categories = Category::latest()->get();
 
         return view('web.categories', compact('categories'));
     }
@@ -38,7 +41,7 @@ class WebController extends Controller
 
     public function trips()
     {
-        $trips = Trip::get();
+        $trips = Trip::latest()->get();
 
         return view('web.trips', compact('trips'));
     }
