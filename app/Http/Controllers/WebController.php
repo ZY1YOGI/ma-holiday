@@ -53,6 +53,7 @@ class WebController extends Controller
 
     public function galleries()
     {
-        return view('web.galleries');
+        $galleries = Gallery::latest()->get();
+        return view('web.galleries', compact('galleries'));
     }
 }
