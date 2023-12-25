@@ -61,34 +61,6 @@ const swiperTrips = new Swiper("#slide-trips", {
 });
 
 
-
-const swiperPartners = new Swiper("#slide-partners", {
-  loop: true,
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
-  },
-  // Navigation arrows
-  navigation: {
-    nextEl: ".slidesPartners-next",
-    prevEl: ".slidesPartners-prev",
-  },
-});
-
-
 const swiperCustomers = new Swiper("#slide-customers", {
   loop: true,
   speed: 500,
@@ -128,6 +100,10 @@ const swiperGallery = new Swiper("#slide-gallery", {
       slidesPerView: 2,
       spaceBetween: 30,
     },
+  },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: true,
   },
   navigation: {
     nextEl: "#slide-gallery-next",

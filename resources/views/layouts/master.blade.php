@@ -16,7 +16,7 @@
     {{-- Keywords --}}
     <meta name="keywords" content="{{ $keywords }}" />
     {{-- Title --}}
-    <title>{{ config('app.name') . ' | ' . $title }}</title>
+    <title>{{ config('app.name') . ' - ' . $title }}</title>
     {{-- Icon --}}
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />
     {{-- Fonts Google --}}

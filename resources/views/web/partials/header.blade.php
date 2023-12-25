@@ -33,14 +33,14 @@
                     <div class="relative" x-init x-data="{ open: false }">
                         <button @click="open = !open" class="inline-flex items-center" type="button">
                             <div class="relative items-center justify-center w-12 h-12 overflow-hidden font-semibold uppercase rounded-full shadow-inner text-neutral-100 ring-1 ring-white dark:ring-neutral-900">
-                                <x-image src="https://ui-avatars.com/api/?name={{ str_replace(' ', '+', auth()->user()->name) }}&color=FFFFFF&background=09090b" :alt="auth()->user()->name" class="absolute object-cover w-full h-full" />
+                                <x-image :src="auth()->user()->getAvatar()" :alt="auth()->user()->name" class="absolute object-cover w-full h-full" />
                             </div>
                         </button>
                         <div x-show="open" class="absolute z-10 w-[230px] mt-3 right-0 sm:px-0 shadow-lg" style="display: none;" x-transition>
                             <div class="relative grid grid-cols-1 gap-6 px-6 bg-white dark:bg-body-dark py-7 rounded-3xl">
                                 <div class="flex items-center space-x-3">
                                     <div class="relative inline-flex items-center justify-center w-12 h-12 overflow-hidden font-semibold uppercase rounded-full shadow-inner wil-avatar text-neutral-100 ring-1 ring-white dark:ring-neutral-900">
-                                        <x-image src="https://ui-avatars.com/api/?name={{ str_replace(' ', '+', auth()->user()->name) }}&color=FFFFFF&background=09090b" :alt="auth()->user()->name" class="absolute object-cover w-full h-full" />
+                                        <x-image :src="auth()->user()->getAvatar()" :alt="auth()->user()->name" class="absolute object-cover w-full h-full" />
                                     </div>
                                     <div class="flex-grow">
                                         <h4 class="font-semibold font-xs">{{ auth()->user()->name }}</h4>
