@@ -32,4 +32,8 @@ class Trip extends Model implements HasMedia
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function getSeoKeywords(): array {
+        return explode(',', $this->seo_keywords);
+    }
 }

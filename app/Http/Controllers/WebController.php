@@ -17,7 +17,8 @@ class WebController extends Controller
         $trips = Trip::latest()->get();
         $galleries = Gallery::latest()->get();
         $categories = Category::latest()->get();
-        return view('web.home', compact('trips', 'galleries', 'categories'));
+        $images = Media::latest()->limit(20)->get();
+        return view('web.home', compact('trips', 'galleries', 'categories', 'images'));
     }
 
     public function aboutUs()
@@ -51,7 +52,8 @@ class WebController extends Controller
 
     public function trip(Trip $trip)
     {
-        return view('web.trip', compact('trip'));
+        $trips = Trip::latest()->get();
+        return view('web.trip', compact('trip', 'trips'));
     }
 
     public function galleries()

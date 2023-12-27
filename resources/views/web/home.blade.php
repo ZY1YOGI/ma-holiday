@@ -78,14 +78,14 @@
         <section class="relative py-10 px-2.5 overflow-hidden">
             <header class="space-y-3 text-center">
                 <h1 class="text-3xl font-semibold text-blue-800 dark:text-sky-50">Trips Category</h1>
-                <p class="text-xl font-semibold text-sky-900/80 px-1 dark:text-white/50">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam!</p>
+                <p class="text-xl font-semibold text-sky-900/80 px-1 dark:text-white/50">Many Trips for you can chooses the right trip from the ground</p>
             </header>
             <div class="pt-12 flex max-w-5xl mx-auto flex-wrap gap-5">
                 @foreach ($categories as $cateogry)
                     <a class="px-6 py-3 rounded-3xl bg-white text-sky-950" href="{{ route('category', $cateogry->slug) }}">{{ $cateogry->name }}</a>
                 @endforeach
             </div>
-            <div class="border_gradient border-2 rounded-3xl my-3 max-w-4xl mx-auto max-md:mx-3"></div>
+            <div class="border_gradient border-t-4 rounded-3xl my-5 max-w-4xl mx-auto max-md:mx-3"></div>
             <div id="slide-trips" class="bg-blue-500/5 rounded-full shadow-lg shadow-white dark:shadow-blue-500 dark:shadow-md">
                 <div class="py-12 swiper-wrapper">
                     @foreach ($trips as $trip)
@@ -135,36 +135,52 @@
 
 
 
-        <section class="container my-20 max-md:px-3 overflow-hidden relative" id="slide-gallery">
+        <section class="container my-20 max-md:px-3">
             <header class="space-y-3 text-center">
-                <h1 class="text-2xl font-medium text-blue-800 dark:text-white uppercase">Galleries</h1>
-                <p class="text-4xl font-semibold text-sky-950 dark:text-sky-500 uppercase">Photos from trips</p>
+                <h1 class="md:text-2xl text-blue-800 dark:text-white uppercase text-xl font-bold">Galleries</h1>
+                <p class="md:text-4xl font-semibold text-sky-950 dark:text-sky-500 text-2xl">Photos from trips</p>
             </header>
-            <ul class="swiper-wrapper my-6">
-                @foreach ($galleries as $gallery)
-                    <li class="swiper-slide rounded-xl">
-                        <div class="group relative w-full aspect-w-16 aspect-h-16 sm:aspect-h-9 z-0">
-                            <div class="w-full h-full grid grid-cols-3 gap-1">
-                                <div class="grid grid-rows-2 gap-0.5">
-                                    <x-image :src="$gallery->getMedia('gallery')[0]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg shadow" :alt="$gallery->name" />
-                                    <x-image :src="$gallery->getMedia('gallery')[1]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg" :alt="$gallery->name" />
+            <div class="my-10 overflow-hidden max-md:px-1" x-data="{ image: null }">
+                <div class="flex items-center justify-center fixed inset-0 backdrop-filter backdrop-blur-[5px] z-50" x-on:click="image=null" x-show="image" x-transition style="display: none">
+                    <div class="md:w-1/2 md:h-3/5 h-2/5 w-4/5">
+                        <img :src="image" alt="scale image" class="size-full object-contain rounded-xl shadow-lg z-50" />
+                    </div>
+                </div>
+                <ul class="mt-3 flex flex-wrap md:gap-2.5 gap-1 justify-center">
+                    @foreach ($images as $image)
+                        <li class="swiper-slide rounded-xl md:size-32 sm:size-20 size-16 cursor-pointer hover:scale-[1.8] transition-all hover:z-10" x-on:click="image=$el.children[0].src">
+                            <x-image :src="$image->getUrl()" :alt="$image->name" width="100" height="100" class="object-cover object-center w-full h-full rounded-lg shadow shadow-blue-300" loading="lazy" />
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="overflow-hidden relative" id="slide-gallery">
+                <ul class="swiper-wrapper my-6">
+                    @foreach ($galleries as $gallery)
+                        <li class="swiper-slide rounded-xl">
+                            <div class="group relative w-full aspect-w-16 aspect-h-16 sm:aspect-h-9 z-0">
+                                <div class="w-full h-full grid grid-cols-3 gap-1">
+                                    <div class="grid grid-rows-2 gap-0.5">
+                                        <x-image :src="$gallery->getMedia('gallery')[0]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg shadow" :alt="$gallery->name" />
+                                        <x-image :src="$gallery->getMedia('gallery')[1]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg" :alt="$gallery->name" />
+                                    </div>
+                                    <x-image :src="$gallery->getMedia('gallery')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-2xl shadow shadow-blue-500" :alt="$gallery->name" />
+                                    <div class="grid grid-rows-2 gap-0.5">
+                                        <x-image :src="$gallery->getMedia('gallery')[3]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg" :alt="$gallery->name" />
+                                        <x-image :src="$gallery->getMedia('gallery')[4]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg shadow" :alt="$gallery->name" />
+                                    </div>
                                 </div>
-                                <x-image :src="$gallery->getMedia('gallery')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-2xl shadow shadow-blue-500" :alt="$gallery->name" />
-                                <div class="grid grid-rows-2 gap-0.5">
-                                    <x-image :src="$gallery->getMedia('gallery')[3]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg" :alt="$gallery->name" />
-                                    <x-image :src="$gallery->getMedia('gallery')[4]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg shadow" :alt="$gallery->name" />
-                                </div>
+                                <a class="absolute inset-0 block transition-opacity opacity-0 bg-white/10 group-hover:opacity-100" href="{{ route('gallery', $gallery->slug) }}"></a>
                             </div>
-                            <a class="absolute inset-0 block transition-opacity opacity-0 bg-white/10 group-hover:opacity-100" href="{{ route('gallery', $gallery->slug) }}"></a>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
-            <button id="slide-gallery-prev" class="absolute top-1/2 -left-3 w-11 h-11 text-xl bg-white dark:bg-neutral-900 rounded-full z-50" title="Prev">
-                < </button>
-                    <button id="slide-gallery-next" class="absolute top-1/2 -right-3 w-11 h-11 text-xl bg-white dark:bg-neutral-900 rounded-full z-50" title="Next">
-                        >
-                    </button>
+                        </li>
+                    @endforeach
+                </ul>
+                <button id="slide-gallery-prev" class="absolute top-1/2 -left-3 w-11 h-11 text-xl bg-white dark:bg-neutral-900 rounded-full z-50" title="Prev">
+                    < </button>
+                        <button id="slide-gallery-next" class="absolute top-1/2 -right-3 w-11 h-11 text-xl bg-white dark:bg-neutral-900 rounded-full z-50" title="Next">
+                            >
+                        </button>
+            </div>
         </section>
 
 
