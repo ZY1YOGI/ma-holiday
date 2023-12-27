@@ -50,14 +50,14 @@ const swiperTrips = new Swiper("#slide-trips", {
       spaceBetween: 30,
     },
   },
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: true,
-  // },
-  // navigation: {
-  //   nextEl: ".slide-trip-next",
-  //   prevEl: ".slide-trip-prev",
-  // },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: true,
+  },
+  navigation: {
+    nextEl: ".slide-trip-next",
+    prevEl: ".slide-trip-prev",
+  },
 });
 
 
@@ -101,10 +101,10 @@ const swiperGallery = new Swiper("#slide-gallery", {
       spaceBetween: 30,
     },
   },
-  // autoplay: {
-  //   delay: 2000,
-  //   disableOnInteraction: true,
-  // },
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: true,
+  },
   navigation: {
     nextEl: "#slide-gallery-next",
     prevEl: "#slide-gallery-prev",

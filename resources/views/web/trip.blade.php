@@ -1,4 +1,4 @@
-<x-layout :title="$trip->title" :description="$trip->seo_description" :keywords="$trip->seo_keywords">
+<x-layout :title="'Trips | ' . $trip->title" :description="$trip->seo_description" :keywords="$trip->seo_keywords">
     @include('web.partials.header')
 
     <main class="container mt-8 lg:mt-16">
