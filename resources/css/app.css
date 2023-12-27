@@ -12,7 +12,6 @@
 .border_gradient {
   border-image: linear-gradient(0.25turn, #2d405c, #31749b, #406786);
   border-image-slice: 1;
-  border-bottom-color: transparent;
 }
 
 .navigation {

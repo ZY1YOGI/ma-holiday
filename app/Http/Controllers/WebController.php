@@ -56,11 +56,16 @@ class WebController extends Controller
 
     public function galleries()
     {
-        $trips = Trip::latest()->get();
         $galleries = Gallery::latest()->get();
         $categories = Category::latest()->get();
-        // $images = DB::table('media')->select('id', 'collection_name', 'name', 'file_name')->get();
         $images = Media::latest()->get();
-        return view('web.galleries', compact('trips', 'galleries', 'categories', 'images'));
+        return view('web.galleries', compact('galleries', 'categories', 'images'));
+    }
+
+    public function gallery(Gallery $gallery)
+    {
+        $categories = Category::latest()->get();
+        $galleries = Gallery::latest()->get();
+        return view('web.gallery', compact('gallery', 'categories', 'galleries'));
     }
 }

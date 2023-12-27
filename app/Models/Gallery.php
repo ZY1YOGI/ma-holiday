@@ -19,4 +19,13 @@ class Gallery extends Model implements HasMedia
         'description',
         'seo_keywords'
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function getSeoKeywords(): array {
+        return explode(',', $this->seo_keywords);
+    }
 }
