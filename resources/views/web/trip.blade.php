@@ -20,11 +20,19 @@
                     </p>
                 </div>
                 <div class="w-full border-b border-neutral-200 dark:border-neutral-700"></div>
-                <button class="flex items-center justify-center flex-shrink-0 rounded-full focus:outline-none h-9 w-9 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-200" title="More" id="headlessui-menu-button-:r4c:" type="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
-                    </svg>
-                </button>
+                <div class="flex items-center justify-between">
+                    <button class="flex items-center justify-center flex-shrink-0 rounded-full focus:outline-none h-9 w-9 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-200" title="More" id="headlessui-menu-button-:r4c:" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
+                        </svg>
+                    </button>
+                    <dl class="flex items-center text-neutral-500 dark:text-neutral-400">
+                        <dt class="sr-only">Date</dt>
+                        <dd class="font-medium text-neutral-500 dark:text-neutral-300 tracking-wide">
+                            <time datetime="{{ $trip->created_at }}">{{ $trip->created_at->format('M d Y') }}</time>
+                        </dd>
+                    </dl>
+                </div>
             </header>
             <div class="grid grid-cols-3 gap-3 my-12 max-md:grid-cols-2 justify-items-center">
                 @foreach ($trip->getMedia('trip') as $image)

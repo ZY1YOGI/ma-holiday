@@ -107,7 +107,7 @@
 }
 
 .customer:hover:after {
-  transform: translateX(0.15rem)
+  transform: translateX(0.35rem)
 }
 
 .notititle {
@@ -120,7 +120,7 @@
 }
 
 .customer:hover .notititle {
-  transform: translateX(0.15rem)
+  transform: translateX(0.25rem)
 }
 
 .notibody {
@@ -131,7 +131,7 @@
 }
 
 .customer:hover .notibody {
-  transform: translateX(0.25rem)
+  transform: translateX(1rem)
 }
 
 .notiglow,

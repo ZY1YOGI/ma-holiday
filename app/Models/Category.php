@@ -35,4 +35,8 @@ class Category extends Model implements HasMedia
     {
         return $this->hasMany(Trip::class, 'category_id');
     }
+
+    public function getSeoKeywords(): array {
+        return explode(',', $this->seo_keywords);
+    }
 }
