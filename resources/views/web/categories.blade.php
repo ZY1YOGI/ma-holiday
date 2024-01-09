@@ -12,9 +12,9 @@
 <x-layout title="Categories" :description="$categoriesDescription" :keywords="$categoriesKeywords">
     @include('web.partials.header')
 
-    <main class="container pt-10 pb-16 lg:pb-28 lg:pt-20 space-y-12">
+    <main class="container pt-10 pb-16 space-y-12 lg:pb-28 lg:pt-20">
         <header class="text-center mb-5 space-y-2.5">
-            <h1 class="text-4xl font-bold text-blue-950 tracking-wider dark:text-blue-400">Categories Trips</h1>
+            <h1 class="text-4xl font-bold tracking-wider text-blue-950 dark:text-blue-400">Categories Trips</h1>
             <p class="px-1.5 text-gray-700 dark:text-gray-300">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid architecto consequatur a tenetur quis assumenda nihil ut quo!
             </p>
