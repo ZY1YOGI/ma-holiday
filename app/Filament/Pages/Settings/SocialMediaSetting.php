@@ -91,15 +91,11 @@ class SocialMediaSetting extends SettingsPage
                     ->schema([
                         Forms\Components\TextInput::make('whatsapp_phone_1')
                             ->label('WhatsApp Phone 1')
-                            ->prefixIcon('bi-whatsapp')
-                            ->tel()
-                            ->telRegex('/\+?([0-9]{2})-?([0-9]{3})-?([0-9]{6,7})/'),
+                            ->prefixIcon('bi-whatsapp'),
 
                         Forms\Components\TextInput::make('whatsapp_phone_2')
                             ->label('WhatsApp Phone 2')
-                            ->prefixIcon('bi-whatsapp')
-                            ->tel()
-                            ->telRegex('/\+?([0-9]{2})-?([0-9]{3})-?([0-9]{6,7})/'),
+                            ->prefixIcon('bi-whatsapp'),
 
                     ])->columns(2)
             ]);

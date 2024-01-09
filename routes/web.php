@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\WebController::class, 'home'])->name('home');
 Route::get('/about-us', [App\Http\Controllers\WebController::class, 'aboutUs'])->name('about-us');
 Route::get('/contact-us', [App\Http\Controllers\WebController::class, 'contactUs'])->name('contact-us');
+Route::post('/contact-us', [App\Http\Controllers\WebController::class, 'contactUsForm'])->middleware('throttle:2,30')->name('contact-us');
 
 
 

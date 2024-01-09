@@ -12,28 +12,33 @@
                         Send us a message and we will respond to you.
                     </p>
                 </header>
+                @if (Session::has('message'))
+                    <div class="max-w-xl p-3 mx-auto mb-5 bg-white rounded-md">
+                        <h1 class="text-xl text-blue-400"> {{ Session::get('message') }}</h1>
+                    </div>
+                @endif
                 <div class="max-w-screen-sm mx-auto py-2.5">
-                    <form class="grid grid-cols-1 gap-6" action="" method="POST">
+                    <form class="grid grid-cols-1 gap-6" action="{{ route('contact-us') }}" method="POST">
                         @csrf
                         <label class="block">
                             <span class="text-base font-medium text-neutral-800 dark:text-neutral-300">Full Name</span>
-                            <input type="text" class="block w-full px-4 py-3 mt-1 text-sm font-normal bg-white rounded-full border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200/50 dark:border-neutral-500 dark:focus:ring-blue-500/30 dark:bg-neutral-900 h-11" placeholder="Name">
-                            <span class="text-sm font-medium text-red-500 nc-Label"></span>
+                            <input type="text" name="name" value="{{ old('name') }}" class="block w-full px-4 py-3 mt-1 text-sm font-normal bg-white rounded-full border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200/50 dark:border-neutral-500 dark:focus:ring-blue-500/30 dark:bg-neutral-900 h-11" placeholder="Name" required />
+                            <span class="text-sm font-medium text-red-500 nc-Label">{{ $errors->first('name') }}</span>
                         </label>
                         <label class="block">
                             <span class="font-medium text-neutral-800 dark:text-neutral-300">E-mail</span>
-                            <input type="email" class="block w-full px-4 py-3 mt-1 text-sm font-normal bg-white rounded-full border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200/50 dark:border-neutral-500 dark:focus:ring-blue-500/30 dark:bg-neutral-900 h-11" placeholder="E-mail">
-                            <span class="text-sm font-medium text-red-500"></span>
+                            <input type="email" name="email" value="{{ old('email') }}" class="block w-full px-4 py-3 mt-1 text-sm font-normal bg-white rounded-full border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200/50 dark:border-neutral-500 dark:focus:ring-blue-500/30 dark:bg-neutral-900 h-11" placeholder="E-mail" required />
+                            <span class="text-sm font-medium text-red-500">{{ $errors->first('email') }}</span>
                         </label>
                         <label class="block">
                             <span class="font-medium text-neutral-800 dark:text-neutral-300">Phone</span>
-                            <input type="tel" class="block w-full px-4 py-3 mt-1 text-sm font-normal bg-white rounded-full border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200/50 dark:border-neutral-500 dark:focus:ring-blue-500/30 dark:bg-neutral-900 h-11" placeholder="Phone Number">
-                            <span class="text-sm font-medium text-red-500"></span>
+                            <input type="tel" name="phone" value="{{ old('phone') }}" class="block w-full px-4 py-3 mt-1 text-sm font-normal bg-white rounded-full border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200/50 dark:border-neutral-500 dark:focus:ring-blue-500/30 dark:bg-neutral-900 h-11" placeholder="Phone Number" />
+                            <span class="text-sm font-medium text-red-500">{{ $errors->first('phone') }}</span>
                         </label>
                         <label class="block">
                             <span class="font-medium text-neutral-800 dark:text-neutral-300">The Message</span>
-                            <textarea class="block w-full mt-1 text-sm bg-white rounded-xl border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:border-neutral-700 dark:focus:ring-blue-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900" rows="7"></textarea>
-                            <span class="text-sm font-medium text-red-500"></span>
+                            <textarea name="message" class="block w-full mt-1 text-sm bg-white rounded-xl border-neutral-200 focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50 dark:border-neutral-700 dark:focus:ring-blue-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900" rows="7">{{ old('message') }}</textarea>
+                            <span class="text-sm font-medium text-red-500">{{ $errors->first('message') }}</span>
                         </label>
                         <button class="flex-shrink-0 relative h-auto inline-flex items-center justify-center rounded-full transition-colors border-transparent bg-blue-700 hover:bg-blue-6000 text-blue-50 text-sm sm:text-base font-medium py-3 px-4 sm:py-3.5 sm:px-6" type="submit">Send Message</button>
                     </form>
