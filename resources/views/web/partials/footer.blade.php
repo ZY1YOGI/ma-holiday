@@ -4,7 +4,7 @@
             <div class="w-full px-8 sm:w-2/3 lg:w-3/12">
                 <div class="w-full mb-10">
                     <a href="/" class="flex items-center mb-3 space-x-3" title='Marsa Alam Holiday'>
-                        <h1 class="relative text-2xl md:text-3xl font-bold dark:text-white whitespace-nowrap uppercase">{{ config('app.name') }} <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute w-12 -right-6 -top-2">
+                        <h1 class="relative text-2xl font-bold uppercase md:text-3xl dark:text-white whitespace-nowrap">{{ config('app.name') }} <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute w-12 -right-6 -top-2">
                                 <path d="M55.6314 14.8267L53.9335 14.1257C42.962 9.5956 30.7319 16.95 29.5892 28.7648L26.1439 19.705C24.5236 15.4442 27.6062 10.8624 32.1634 10.7577L37.6586 10.6315L22.2533 10.9722L19.6858 3.82297L19.4929 5.7026C19.1857 8.69612 16.6641 10.9722 13.6549 10.9722L0.97935 10.9722C11.9699 -1.56775 30.7393 -3.58629 44.1449 6.33002L55.6314 14.8267Z" fill="#2079FF" />
                             </svg>
                         </h1>
@@ -95,7 +95,7 @@
                     We'd love to hear from you
                 </p>
                 <form action="">
-                    <input type="email" name="contact" class="w-full outline-none border-none rounded-full py-3 px-5 shadow" placeholder="Email Address" />
+                    <input type="email" name="contact" class="w-full px-5 py-3 border-none rounded-full shadow outline-none" placeholder="Email Address" />
                 </form>
                 <p class="mt-5 text-base">&copy; 2023 All rights reserved For Ma-Holiday</p>
             </div>
@@ -105,8 +105,8 @@
             <path d="M-64 140.5C-64 62.904 -1.096 1.90666e-05 76.5 1.22829e-05C154.096 5.49924e-06 217 62.904 217 140.5C217 218.096 154.096 281 76.5 281C-1.09598 281 -64 218.096 -64 140.5Z" fill="url(#paint0_linear_1179_5)"></path>
             <defs>
                 <linearGradient id="paint0_linear_1179_5" x1="76.5" y1="281" x2="76.5" y2="1.22829e-05" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#3056D3" stop-opacity="0.08"></stop>
-                    <stop offset="1" stop-color="#C4C4C4" stop-opacity="0"></stop>
+                    <stop stop-color="#1059D9" stop-opacity="0.3"></stop>
+                    <stop offset="1" stop-color="#C5C5C5" stop-opacity="0"></stop>
                 </linearGradient>
             </defs>
         </svg></span>
