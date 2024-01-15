@@ -16,15 +16,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class WebController extends Controller
 {
 
-
-
-    public function __construct(SocialMediaSettings $SocialMediaSettings)
-    {
-        view()->composer('*', function (View $view) use ($SocialMediaSettings) {
-            $view->with('social', $SocialMediaSettings);
-        });
-    }
-
     public function home(): View
     {
         $trips = Trip::latest()->get();

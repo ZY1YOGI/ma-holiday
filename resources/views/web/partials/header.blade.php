@@ -71,7 +71,7 @@
                     </div>
                     <div class="px-1"></div>
                 @else
-                    <a href="{{ route('login') }}" class="relative inline-flex items-center justify-center h-auto px-4 py-3 text-sm font-medium transition-colors bg-gray-700 rounded-full sm:text-base sm:px-6 disabled:bg-opacity-70 bg-primary-6000 hover:bg-primary-700 text-neutral-50">
+                    <a href="{{ route('login') }}" class="relative inline-flex items-center justify-center h-auto px-4 py-3 text-sm font-medium transition-colors bg-blue-700 rounded-full sm:text-base sm:px-6 disabled:bg-opacity-70 bg-primary-6000 hover:bg-primary-700 text-neutral-50">
                         Login
                     </a>
                 @endauth
