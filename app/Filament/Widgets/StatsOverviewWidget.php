@@ -2,8 +2,12 @@
 
 namespace App\Filament\Widgets;
 
+use App\Models\Contact;
+use App\Models\Trip;
+use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class StatsOverviewWidget extends BaseWidget
 {
@@ -12,26 +16,15 @@ class StatsOverviewWidget extends BaseWidget
     protected function getStats(): array
     {
         return [
-            Stat::make('Revenue', '$192.1k')
-                ->description('32k increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->chart([7, 2, 10, 3, 15, 4, 17])
-                ->color('success'),
-            Stat::make('New customers', '1340')
-                ->description('3% decrease')
-                ->descriptionIcon('heroicon-m-arrow-trending-down')
-                ->chart([17, 16, 14, 15, 14, 13, 12])
-                ->color('danger'),
-            Stat::make('New orders', '3543')
-                ->description('7% increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->chart([15, 4, 10, 2, 12, 4, 12])
-                ->color('success'),
-            Stat::make('New Users', '15')
-                ->description('12% increase')
-                ->descriptionIcon('heroicon-m-arrow-trending-up')
-                ->chart([15, 4, 10, 2, 12, 4, 12])
-                ->color('success'),
+            Stat::make('TRIPS', Trip::count()),
+
+            Stat::make('USERS', User::count()),
+
+            Stat::make('All IMAGES', Media::count()),
+
+            Stat::make('IMAGES IN GALLERY', Media::count()),
+
+            Stat::make('msg in contact us', Contact::where('read', false)->count()),
         ];
     }
 }
