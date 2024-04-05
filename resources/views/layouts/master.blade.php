@@ -9,12 +9,22 @@
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     {{-- Author --}}
-    <meta name="author" content="Youssef Amjad" />
+    <meta name="author" content="Youssef Amjad (ZY1YOGi)" />
     <link rel="author" href="https://www.facebook.com/ZY1YOGi" />
     {{-- Description --}}
     <meta name="description" content="{{ $description }}" />
     {{-- Keywords --}}
     <meta name="keywords" content="{{ $keywords }}" />
+    {{-- Meta OG --}}
+    <meta property="og:title" content="{{ $title }}" />
+    <meta property="og:image" content="{{ asset('bg-image.png') }}" />
+    <meta property="og:type" content="website" />
+    {{-- Meta Twitter --}}
+    <meta name="twitter:title" content="{{ $title }}" />
+    <meta name="twitter:description" content="{{ $description }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ asset('bg-image.png') }}" />
+    <meta name="twitter:creator" content="@ZYYOGi" />
     {{-- Title --}}
     <title>{{ config('app.name') . ' - ' . $title }}</title>
     {{-- Icon --}}

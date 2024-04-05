@@ -14,7 +14,7 @@
                             <div class="relative flex flex-col-reverse justify-end md:flex-row">
                                 <div class="z-10 w-full px-3 -mt-6 md:absolute md:left-0 md:top-1/2 md:transform md:-translate-y-1/2 md:mt-12 sm:px-6 md:px-0 md:w-3/5 lg:w-1/2 xl:w-2/5">
                                     <div class="p-4 space-y-3 bg-white shadow-lg dark:bg-slate-600 sm:p-8 xl:py-14 md:px-10 bg-opacity-40 backdrop-filter backdrop-blur-lg rounded-3xl sm:space-y-5">
-                                        <div class="flex flex-wrap space-x-2">
+                                        <div class="flex flex-wrap gap-1.5">
                                             <h3 class="transition-colors hover:text-white duration-300 nc-Badge relative inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-blue-800 bg-blue-100 hover:bg-blue-800">Ma-Holiday</h3>
                                             @foreach (explode(',', $trip->seo_keywords) as $keyword)
                                                 <h3 role="tag" class="transition-colors hover:text-white duration-300 px-2.5 py-1 rounded-full font-medium text-xs relative text-blue-800 bg-blue-100 hover:bg-blue-800">{{ $keyword }}</h3>
@@ -140,13 +140,13 @@
                 <h1 class="text-xl font-bold text-blue-800 uppercase md:text-2xl dark:text-white">Galleries</h1>
                 <p class="text-2xl font-semibold md:text-4xl text-sky-950 dark:text-sky-500">Photos from trips</p>
             </header>
-            <div class="mb-10 overflow-hidden max-md:px-1" x-data="{ image: null }">
+            <div class="overflow-hidden md:mb-10 max-md:px-1 max-md:my-8" x-data="{ image: null }">
                 <div class="flex items-center justify-center fixed inset-0 backdrop-filter backdrop-blur-[5px] z-50" x-on:click="image=null" x-show="image" x-transition style="display: none">
                     <div class="w-4/5 md:w-1/2 md:h-3/5 h-2/5">
                         <img :src="image" alt="scale image" class="z-50 object-contain shadow-lg size-full rounded-xl" />
                     </div>
                 </div>
-                <ul class="p-12 flex flex-wrap md:gap-2.5 gap-1 justify-center">
+                <ul class="md:p-12 flex flex-wrap md:gap-2.5 gap-1 justify-center">
                     @foreach ($images as $image)
                         <li class="swiper-slide rounded-xl md:size-32 sm:size-20 size-16 cursor-pointer hover:scale-[1.8] transition-all hover:z-10" x-on:click="image=$el.children[0].src">
                             <x-image :src="$image->getUrl()" :alt="$image->name" width="100" height="100" class="object-cover object-center w-full h-full rounded-lg shadow shadow-blue-300" loading="lazy" />
