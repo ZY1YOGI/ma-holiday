@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Models\Contact;
+use App\Models\Gallery;
 use App\Models\Trip;
 use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
@@ -18,13 +19,13 @@ class StatsOverviewWidget extends BaseWidget
         return [
             Stat::make('TRIPS', Trip::count()),
 
-            Stat::make('USERS', User::count()),
-
             Stat::make('All IMAGES', Media::count()),
 
-            Stat::make('IMAGES IN GALLERY', Media::count()),
+            Stat::make('GALLERY', Gallery::count()),
 
-            Stat::make('msg in contact us', Contact::where('read', false)->count()),
+            Stat::make('USERS', User::count()),
+
+            Stat::make('Message to contact us', Contact::where('read', false)->count()),
         ];
     }
 }

@@ -25,7 +25,7 @@
                                             {{ $trip->title }}
                                         </h2>
                                         <p class="mt-2 text-sm font-normal md:mt-3 sm:text-base text-slate-500 dark:text-slate-100 line-clamp-4">
-                                            {{ fake()->text(300) }}
+                                            {{ $trip->description }}
                                         </p>
                                         <div class="flex justify-between pt-5">
                                             <dl class="flex items-center mt-1 text-xs text-neutral-500 dark:text-neutral-400">
@@ -90,11 +90,11 @@
                 <div class="py-12 swiper-wrapper">
                     @foreach ($trips as $trip)
                         <div class="py-3 border border-blue-300 shadow swiper-slide bg-body-light rounded-xl shadow-blue-500 dark:bg-body-dark dark:border-blue-950">
-                            <div class="flex flex-wrap space-x-2 px-2.5 pb-2.5">
-                                <h3 role="tag" class="transition-colors hover:text-white duration-300 nc-Badge relative inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-blue-900 bg-white hover:bg-blue-800">{{ $trip->category->name }}</h3>
-                                <h3 role="tag" class="transition-colors hover:text-white duration-300 nc-Badge relative inline-flex px-2.5 py-1 rounded-full font-medium text-xs text-blue-900 bg-blue-200 hover:bg-blue-800">Ma-Holiday</h3>
+                            <div class="flex flex-wrap space-x-2 space-y-1 px-2.5 pb-2.5">
+                                <h3 role="tag" class="transition-colors hover:text-white duration-300 px-2.5 py-1 rounded-full font-medium text-xs text-blue-900 bg-white hover:bg-blue-800">{{ $trip->category->name }}</h3>
+                                <h3 role="tag" class="transition-colors hover:text-white duration-300 px-2.5 py-1 rounded-full font-medium text-xs text-blue-900 bg-blue-200 hover:bg-blue-800">Ma-Holiday</h3>
                                 @foreach (explode(',', $trip->seo_keywords) as $keyword)
-                                    <h3 role="tag" class="transition-colors hover:text-white duration-300 px-2.5 py-1 rounded-full font-medium text-xs relative text-blue-900 bg-blue-200 hover:bg-blue-800">{{ $keyword }}</h3>
+                                    <h3 role="tag" class="transition-colors hover:text-white duration-300 px-2.5 py-1 rounded-full font-medium text-xs text-blue-900 bg-blue-200 hover:bg-blue-800">{{ $keyword }}</h3>
                                 @endforeach
                             </div>
                             <div class="relative z-0 w-full group aspect-w-16 aspect-h-16 sm:aspect-h-12">
@@ -140,13 +140,13 @@
                 <h1 class="text-xl font-bold text-blue-800 uppercase md:text-2xl dark:text-white">Galleries</h1>
                 <p class="text-2xl font-semibold md:text-4xl text-sky-950 dark:text-sky-500">Photos from trips</p>
             </header>
-            <div class="my-10 overflow-hidden max-md:px-1" x-data="{ image: null }">
+            <div class="mb-10 overflow-hidden max-md:px-1" x-data="{ image: null }">
                 <div class="flex items-center justify-center fixed inset-0 backdrop-filter backdrop-blur-[5px] z-50" x-on:click="image=null" x-show="image" x-transition style="display: none">
                     <div class="w-4/5 md:w-1/2 md:h-3/5 h-2/5">
                         <img :src="image" alt="scale image" class="z-50 object-contain shadow-lg size-full rounded-xl" />
                     </div>
                 </div>
-                <ul class="mt-3 flex flex-wrap md:gap-2.5 gap-1 justify-center">
+                <ul class="p-12 flex flex-wrap md:gap-2.5 gap-1 justify-center">
                     @foreach ($images as $image)
                         <li class="swiper-slide rounded-xl md:size-32 sm:size-20 size-16 cursor-pointer hover:scale-[1.8] transition-all hover:z-10" x-on:click="image=$el.children[0].src">
                             <x-image :src="$image->getUrl()" :alt="$image->name" width="100" height="100" class="object-cover object-center w-full h-full rounded-lg shadow shadow-blue-300" loading="lazy" />
@@ -160,12 +160,14 @@
                         <li class="swiper-slide rounded-xl">
                             <div class="relative z-0 w-full group aspect-w-16 aspect-h-16 sm:aspect-h-9">
                                 <div class="grid w-full h-full grid-cols-3 gap-1">
-                                    <div class="grid grid-rows-2 gap-0.5">
+                                    <div class="grid grid-rows-2 gap-0.5 overflow-hidden">
                                         <x-image :src="$gallery->getMedia('gallery')[0]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg shadow" :alt="$gallery->name" />
                                         <x-image :src="$gallery->getMedia('gallery')[1]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg" :alt="$gallery->name" />
                                     </div>
-                                    <x-image :src="$gallery->getMedia('gallery')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full shadow rounded-2xl shadow-blue-500" :alt="$gallery->name" />
-                                    <div class="grid grid-rows-2 gap-0.5">
+                                    <div class="overflow-hidden">
+                                        <x-image :src="$gallery->getMedia('gallery')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full shadow rounded-2xl shadow-blue-500" :alt="$gallery->name" />
+                                    </div>
+                                    <div class="grid grid-rows-2 gap-0.5 overflow-hidden">
                                         <x-image :src="$gallery->getMedia('gallery')[3]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg" :alt="$gallery->name" />
                                         <x-image :src="$gallery->getMedia('gallery')[4]->original_url ?? 'default-placeholder.png'" class="object-cover object-center w-full h-full rounded-lg shadow" :alt="$gallery->name" />
                                     </div>

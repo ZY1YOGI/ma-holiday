@@ -4,7 +4,7 @@
 
         <section id="features" class="relative block px-6 py-10 border-t border-b border-white md:py-20 md:px-10">
             <div class="relative max-w-5xl mx-auto text-center">
-                <span class="flex items-center justify-center my-3 font-medium tracking-wider text-gray-800 uppercase" data-aos="fade-down" data-aos-duration="750">
+                <span class="flex items-center justify-center my-3 font-medium tracking-wider text-gray-800 uppercase dark:text-gray-100" data-aos="fade-down" data-aos-duration="750">
                     Why choose us
                 </span>
                 <h2 class="block w-full text-3xl font-bold sm:text-4xl" data-aos="fade-up" data-aos-duration="1200">
@@ -20,19 +20,19 @@
                     <a class="relative z-50" title="Marsa Alam Holiday" href="{{ route('home') }}">
                         <h1 class="text-lg font-bold text-blue-500 md:text-2xl dark:text-white" data-aos="fade-up" data-aos-duration="500" title="{{ config('app.name') }}">{{ config('app.name') }}</h1>
                     </a>
-                    <h3 class="mt-6 text-gray-900">Marsa Alam</h3>
+                    <h3 class="mt-6 text-gray-900 dark:text-gray-200">Marsa Alam</h3>
                 </div>
                 <div class="p-8 text-center border border-white rounded-md shadow">
                     <a class="relative z-50" title="Marsa Alam Holiday" href="{{ route('home') }}">
                         <h1 class="text-lg font-bold text-blue-500 md:text-2xl dark:text-white" data-aos="fade-down" data-aos-duration="750" title="{{ config('app.name') }}">{{ config('app.name') }}</h1>
                     </a>
-                    <h3 class="mt-6 text-gray-900">24/7 Customer Support</h3>
+                    <h3 class="mt-6 text-gray-900 dark:text-gray-200">24/7 Customer Support</h3>
                 </div>
                 <div class="p-8 text-center border border-white rounded-md shadow">
                     <a class="relative z-50" title="Marsa Alam Holiday" href="{{ route('home') }}">
                         <h1 class="text-lg font-bold text-blue-500 md:text-2xl dark:text-white" data-aos="fade-up" data-aos-duration="1000" title="{{ config('app.name') }}">{{ config('app.name') }}</h1>
                     </a>
-                    <h3 class="mt-6 text-gray-900">Competitive prices</h3>
+                    <h3 class="mt-6 text-gray-900 dark:text-gray-200">Competitive prices</h3>
                 </div>
             </div>
             <div class="absolute bottom-0 left-0 z-0 w-full border-b h-1/3" style="background-image: linear-gradient(to right top, rgba(61, 58, 107, 0.2) 0%, transparent 50%, transparent 100%); border-color: rgba(92, 79, 240, 0.2);">

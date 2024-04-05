@@ -46,7 +46,7 @@ class TripResource extends Resource
                         Forms\Components\Textarea::make('description')
                             ->required()
                             ->rows(5)
-                            ->maxLength(300),
+                            ->maxLength(255),
                     ]),
 
                 Forms\Components\Section::make('Content')

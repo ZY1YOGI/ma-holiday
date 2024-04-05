@@ -6,20 +6,20 @@
 
         <header class="my-12 text-center">
             <h1 class="text-3xl font-bold text-sky-900 md:text-5xl dark:text-white ">Ma Holiday Galleries</h1>
-            <p class="pt-3 text-xl text-sky-950 dark:text-sky-600 px-px">This is where photo art comes together</p>
+            <p class="px-px pt-3 text-xl text-sky-950 dark:text-sky-600">This is where photo art comes together</p>
         </header>
 
 
-        <section class="my-12 overflow-hidden max-md:px-1" x-data="{ image: null }">
+        <section class="mb-12 overflow-hidden max-md:px-1" x-data="{ image: null }">
             <header class="space-y-3 text-center">
                 <h1 class="text-2xl font-medium text-blue-900 uppercase dark:text-sky-800">All Photos from Gallery</h1>
             </header>
             <div class="flex items-center justify-center fixed inset-0 backdrop-filter backdrop-blur-[5px] z-50" x-on:click="image=null" x-show="image" x-transition style="display: none">
-                <div class="md:w-1/2 md:h-3/5 h-2/5 w-4/5">
-                    <img :src="image" alt="scale image" class="size-full object-contain rounded-xl shadow-lg z-50" />
+                <div class="w-4/5 md:w-1/2 md:h-3/5 h-2/5">
+                    <img :src="image" alt="scale image" class="z-50 object-contain shadow-lg size-full rounded-xl" />
                 </div>
             </div>
-            <ul class="my-6 flex flex-wrap md:gap-2.5 gap-1 overflow-y-auto justify-center h-full max-h-screen">
+            <ul class="p-16 flex flex-wrap md:gap-2.5 gap-1 overflow-y-auto justify-center h-full max-h-screen">
                 @foreach ($images as $image)
                     <li class="swiper-slide rounded-xl md:size-32 sm:size-20 size-16 cursor-pointer hover:scale-[1.8] transition-all hover:z-10" x-on:click="image=$el.children[0].src">
                         <x-image :src="$image->getUrl()" :alt="$image->name" width="100" height="100" class="object-cover object-center w-full h-full rounded-lg shadow shadow-blue-300" loading="lazy" />
@@ -29,10 +29,10 @@
         </section>
 
 
-        <section class="relative mt-32 overflow-hidden max-md:px-3 border-t-8 border_gradient" id="slide-gallery">
-            <header class="space-y-3 text-center py-6">
-                <h1 class="md:text-5xl text-3xl font-bold text-sky-950 dark:text-sky-500">Galleries</h1>
-                <p class="md:text-2xl text-xl text-sky-900/80 dark:text-sky-600">Large collections of photographical images of our Trips.</p>
+        <section class="relative mt-32 overflow-hidden border-t-8 max-md:px-3 border_gradient" id="slide-gallery">
+            <header class="py-6 space-y-3 text-center">
+                <h1 class="text-3xl font-bold md:text-5xl text-sky-950 dark:text-sky-500">Galleries</h1>
+                <p class="text-xl md:text-2xl text-sky-900/80 dark:text-sky-600">Large collections of photographical images of our Trips.</p>
             </header>
             <ul class="my-6 swiper-wrapper">
                 @foreach ($galleries as $gallery)
@@ -47,15 +47,15 @@
                         <div class="relative z-0 w-full group aspect-w-16 aspect-h-16 sm:aspect-h-12">
                             <div class="grid w-full h-full grid-cols-3 gap-1">
                                 <div class="grid grid-rows-2 gap-0.5">
-                                    <x-image :src="$gallery->getMedia('gallery')[0]->original_url ?? 'default-placeholder.png'" class="object-cover object-center size-full rounded-lg shadow" :alt="$gallery->getMedia('gallery')[0]->name ?? $gallery->name" loading="lazy" />
-                                    <x-image :src="$gallery->getMedia('gallery')[1]->original_url ?? 'default-placeholder.png'" class="object-cover object-center size-full rounded-lg" :alt="$gallery->getMedia('gallery')[1]->name ?? $gallery->name" loading="lazy" />
+                                    <x-image :src="$gallery->getMedia('gallery')[0]->original_url ?? 'default-placeholder.png'" class="object-cover object-center rounded-lg shadow size-full" :alt="$gallery->getMedia('gallery')[0]->name ?? $gallery->name" loading="lazy" />
+                                    <x-image :src="$gallery->getMedia('gallery')[1]->original_url ?? 'default-placeholder.png'" class="object-cover object-center rounded-lg size-full" :alt="$gallery->getMedia('gallery')[1]->name ?? $gallery->name" loading="lazy" />
                                 </div>
                                 <div>
-                                    <x-image :src="$gallery->getMedia('gallery')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center size-full shadow rounded-2xl shadow-blue-500" :alt="$gallery->getMedia('gallery')[2]->name ?? $gallery->name" loading="lazy" />
+                                    <x-image :src="$gallery->getMedia('gallery')[2]->original_url ?? 'default-placeholder.png'" class="object-cover object-center shadow size-full rounded-2xl shadow-blue-500" :alt="$gallery->getMedia('gallery')[2]->name ?? $gallery->name" loading="lazy" />
                                 </div>
                                 <div class="grid grid-rows-2 gap-0.5">
-                                    <x-image :src="$gallery->getMedia('gallery')[3]->original_url ?? 'default-placeholder.png'" class="object-cover object-center size-full rounded-lg" :alt="$gallery->getMedia('gallery')[3]->name ?? $gallery->name" loading="lazy" />
-                                    <x-image :src="$gallery->getMedia('gallery')[4]->original_url ?? 'default-placeholder.png'" class="object-cover object-center size-full rounded-lg shadow" :alt="$gallery->getMedia('gallery')[4]->name ?? $gallery->name" loading="lazy" />
+                                    <x-image :src="$gallery->getMedia('gallery')[3]->original_url ?? 'default-placeholder.png'" class="object-cover object-center rounded-lg size-full" :alt="$gallery->getMedia('gallery')[3]->name ?? $gallery->name" loading="lazy" />
+                                    <x-image :src="$gallery->getMedia('gallery')[4]->original_url ?? 'default-placeholder.png'" class="object-cover object-center rounded-lg shadow size-full" :alt="$gallery->getMedia('gallery')[4]->name ?? $gallery->name" loading="lazy" />
                                 </div>
                             </div>
                             <a class="absolute inset-0 block transition-opacity opacity-0 bg-white/10 group-hover:opacity-100" href="{{ route('gallery', $gallery->slug) }}"></a>
