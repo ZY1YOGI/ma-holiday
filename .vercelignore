@@ -1,5 +1,4 @@
-# PHP
 /vendor
-
-# Vercel
 .vercel
+Homestead.json
+Homestead.yaml
