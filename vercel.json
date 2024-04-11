@@ -17,7 +17,7 @@
     "env": {
         "APP_NAME": "Ma-Holiday",
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "https://ma-holiday.vercel.app",
 
         "VERCEL_DEMO_MODE": "true",
